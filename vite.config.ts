@@ -53,6 +53,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       ],
     },
     server: {
+      https: true,
       // Listening on all local IPs
       host: true,
       port: VITE_PORT,
@@ -60,7 +61,9 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       proxy: createProxy(VITE_PROXY),
     },
     build: {
-      target: 'es2015',
+      minify: false,
+      // target: 'es2015',
+      // cssTarget: 'chrome86',
       outDir: OUTPUT_DIR,
       terserOptions: {
         compress: {
@@ -93,13 +96,13 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
     plugins: createVitePlugins(viteEnv, isBuild),
 
     optimizeDeps: {
+      // @iconify/iconify: The dependency is dynamically and virtually loaded by @purge-icons/generated, so it needs to be specified explicitly
       include: [
         'ant-design-vue/es/locale/zh_CN',
-        'dayjs/locale/zh-cn',
         'ant-design-vue/es/locale/en_US',
+        'dayjs/locale/zh-cn',
         'dayjs/locale/eu',
       ],
-      exclude: ['vue-demi'],
     },
   };
 };

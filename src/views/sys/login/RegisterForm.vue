@@ -26,13 +26,6 @@
           :placeholder="t('sys.login.smsCode')"
         />
       </FormItem>
-      <FormItem name="password" class="enter-x">
-        <StrengthMeter
-          size="large"
-          v-model:value="formData.password"
-          :placeholder="t('sys.login.password')"
-        />
-      </FormItem>
       <FormItem name="confirmPassword" class="enter-x">
         <InputPassword
           size="large"
@@ -69,7 +62,6 @@
   import { reactive, ref, unref, computed } from 'vue';
   import LoginFormTitle from './LoginFormTitle.vue';
   import { Form, Input, Button, Checkbox } from 'ant-design-vue';
-  import { StrengthMeter } from '/@/components/StrengthMeter';
   import { CountdownInput } from '/@/components/CountDown';
   import { useI18n } from '/@/hooks/web/useI18n';
   import { useLoginState, useFormRules, useFormValid, LoginStateEnum } from './useLogin';
