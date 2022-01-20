@@ -32,28 +32,18 @@ export default {
     lazyBasic: '基础示例',
     lazyTransition: '动画效果',
 
-    verify: '验证组件',
-    verifyDrag: '拖拽校验',
-    verifyRotate: '图片还原',
-
-    qrcode: '二维码组件',
     strength: '密码强度组件',
     upload: '上传组件',
 
     loading: 'Loading',
 
     time: '相对时间',
-    cropperImage: '图片裁剪',
     cardList: '卡片列表',
   },
   editor: {
     editor: '编辑器',
     jsonEditor: 'Json编辑器',
     markdown: 'markdown编辑器',
-
-    tinymce: '富文本',
-    tinymceBasic: '基础使用',
-    tinymceForm: '嵌入form',
   },
   excel: {
     excel: 'Excel',
@@ -91,10 +81,6 @@ export default {
     breadcrumbFlatDetail: '平级详情',
     breadcrumbChildren: '层级模式',
     breadcrumbChildrenDetail: '层级详情',
-  },
-  flow: {
-    name: '图形编辑器',
-    flowChart: '流程图',
   },
   form: {
     form: 'Form',

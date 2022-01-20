@@ -33,28 +33,18 @@ export default {
     lazyBasic: 'Basic',
     lazyTransition: 'Animation',
 
-    verify: 'Verify',
-    verifyDrag: 'Drag ',
-    verifyRotate: 'Picture Restore',
-
-    qrcode: 'QR code',
     strength: 'Password strength',
     upload: 'Upload',
 
     loading: 'Loading',
 
     time: 'Relative Time',
-    cropperImage: 'Cropper Image',
     cardList: 'Card List',
   },
   editor: {
     editor: 'Editor',
     jsonEditor: 'Json editor',
     markdown: 'Markdown editor',
-
-    tinymce: 'Rich text',
-    tinymceBasic: 'Basic',
-    tinymceForm: 'embedded form',
   },
   excel: {
     excel: 'Excel',
@@ -95,10 +85,6 @@ export default {
 
     breadcrumbChildren: 'Level mode',
     breadcrumbChildrenDetail: 'Level mode detail',
-  },
-  flow: {
-    name: 'Graphics editor',
-    flowChart: 'FlowChart',
   },
   form: {
     form: 'Form',

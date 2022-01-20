@@ -1,6 +1,6 @@
 import type { UserConfig, ConfigEnv } from 'vite';
 import pkg from './package.json';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import { loadEnv } from 'vite';
 import { resolve } from 'path';
 import { generateModifyVars } from './build/generate/generateModifyVars';
@@ -16,7 +16,7 @@ function pathResolve(dir: string) {
 const { dependencies, devDependencies, name, version } = pkg;
 const __APP_INFO__ = {
   pkg: { dependencies, devDependencies, name, version },
-  lastBuildTime: moment().format('YYYY-MM-DD HH:mm:ss'),
+  lastBuildTime: dayjs().format('YYYY-MM-DD HH:mm:ss'),
 };
 
 export default ({ command, mode }: ConfigEnv): UserConfig => {
@@ -93,15 +93,13 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
     plugins: createVitePlugins(viteEnv, isBuild),
 
     optimizeDeps: {
-      // @iconify/iconify: The dependency is dynamically and virtually loaded by @purge-icons/generated, so it needs to be specified explicitly
       include: [
-        '@iconify/iconify',
         'ant-design-vue/es/locale/zh_CN',
-        'moment/dist/locale/zh-cn',
+        'dayjs/locale/zh-cn',
         'ant-design-vue/es/locale/en_US',
-        'moment/dist/locale/eu',
+        'dayjs/locale/eu',
       ],
-      exclude: ['vue-demi', 'consolidate'],
+      exclude: ['vue-demi'],
     },
   };
 };

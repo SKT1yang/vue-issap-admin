@@ -5,13 +5,14 @@
     "moduleResolution": "node",
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "allowSyntheticDefaultImports": true,
     "strictFunctionTypes": false,
     "jsx": "preserve",
     "baseUrl": ".",
     "allowJs": true,
     "sourceMap": true,
+    // 包含以下配置，您必须使用 import dayjs from 'dayjs' 的 default import 模式
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -39,5 +40,5 @@
     "mock/**/*.ts",
     "vite.config.ts"
   ],
-  "exclude": ["node_modules", "tests/server/**/*.ts", "dist", "**/*.js"]
+  "exclude": ["node_modules", "tests/server/**/*.ts", "dist", "**/*.js", "src/**/iconfont.ts"]
 }

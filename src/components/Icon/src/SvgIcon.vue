@@ -7,46 +7,45 @@
     <use :xlink:href="symbolId" />
   </svg>
 </template>
-<script lang="ts">
+<script lang="ts" name="SvgIcon" setup>
   import type { CSSProperties } from 'vue';
-  import { defineComponent, computed } from 'vue';
+  import { computed, defineProps } from 'vue';
   import { useDesign } from '/@/hooks/web/useDesign';
+  import { Iconfont } from '/@/enums/iconfontEnum';
 
-  export default defineComponent({
-    name: 'SvgIcon',
-    props: {
-      prefix: {
-        type: String,
-        default: 'icon',
-      },
-      name: {
-        type: String,
-        required: true,
-      },
-      size: {
-        type: [Number, String],
-        default: 16,
-      },
-      spin: {
-        type: Boolean,
-        default: false,
-      },
+  const props = defineProps({
+    prefix: {
+      type: String as PropType<string>,
+      default: 'icon',
     },
-    setup(props) {
-      const { prefixCls } = useDesign('svg-icon');
-      const symbolId = computed(() => `#${props.prefix}-${props.name}`);
+    name: {
+      type: String as PropType<string>,
+      required: true,
+    },
+    size: {
+      type: [Number, String],
+      default: 16,
+    },
+    spin: {
+      type: Boolean as PropType<boolean>,
+      default: false,
+    },
+  });
 
-      const getStyle = computed((): CSSProperties => {
-        const { size } = props;
-        let s = `${size}`;
-        s = `${s.replace('px', '')}px`;
-        return {
-          width: s,
-          height: s,
-        };
-      });
-      return { symbolId, prefixCls, getStyle };
-    },
+  const { prefixCls } = useDesign('svg-icon');
+  const isIconfont = props.name.startsWith(Iconfont.PREFIX);
+  const symbolId = computed(() => {
+    return isIconfont ? `#${props.name}` : `#${props.prefix}-${props.name}`;
+  });
+
+  const getStyle = computed((): CSSProperties => {
+    const { size } = props;
+    let s = `${size}`;
+    s = `${s.replace('px', '')}px`;
+    return {
+      width: s,
+      height: s,
+    };
   });
 </script>
 <style lang="less" scoped>

@@ -4,6 +4,8 @@ import 'virtual:windi-components.css';
 import 'virtual:windi-utilities.css';
 // Register icon sprite
 import 'virtual:svg-icons-register';
+// iconfont 大致是将一个SVG的图标集写到了源码中去
+import '/@/components/Icon/iconfont/iconfont';
 import App from './App.vue';
 import { createApp } from 'vue';
 import { initAppConfigStore } from '/@/logics/initAppConfig';

@@ -107,14 +107,12 @@
   "i18n-ally.displayLanguage": "zh-CN",
   "i18n-ally.enabledFrameworks": ["vue", "react"],
   "cSpell.words": [
-    "vben",
+    "issap",
     "windi",
     "browserslist",
     "tailwindcss",
     "esnext",
     "antv",
-    "tinymce",
-    "qrcode",
     "sider",
     "pinia",
     "sider",
@@ -125,18 +123,14 @@
     "vitejs",
     "sortablejs",
     "mockjs",
-    "codemirror",
-    "iconify",
-    "commitlint",
     "vditor",
     "echarts",
-    "cropperjs",
-    "logicflow",
     "vueuse",
     "zxcvbn",
     "lintstagedrc",
     "brotli",
     "tailwindcss",
     "sider"
-  ]
+  ],
+  "jest.jestCommandLine": "jest start"
 }

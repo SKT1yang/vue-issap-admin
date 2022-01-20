@@ -31,24 +31,11 @@
                   v-for="icon in getPaginationList"
                   :key="icon"
                   :class="currentSelect === icon ? 'border border-primary' : ''"
-                  class="
-                    p-2
-                    w-1/8
-                    cursor-pointer
-                    mr-1
-                    mt-1
-                    flex
-                    justify-center
-                    items-center
-                    border border-solid
-                    hover:border-primary
-                  "
+                  class="p-2 w-1/8 cursor-pointer mr-1 mt-1 flex justify-center items-center border border-solid hover:border-primary"
                   @click="handleClick(icon)"
                   :title="icon"
                 >
-                  <!-- <Icon :icon="icon" :prefix="prefix" /> -->
-                  <SvgIcon v-if="isSvgMode" :name="icon" />
-                  <Icon :icon="icon" v-else />
+                  <SvgIcon :name="icon" />
                 </li>
               </ul>
             </ScrollContainer>
@@ -70,7 +57,6 @@
         <span class="cursor-pointer px-2 py-1 flex items-center" v-if="isSvgMode && currentSelect">
           <SvgIcon :name="currentSelect" />
         </span>
-        <Icon :icon="currentSelect || 'ion:apps-outline'" class="cursor-pointer px-2 py-1" v-else />
       </a-popover>
     </template>
   </a-input>
@@ -80,10 +66,7 @@
   import { useDesign } from '/@/hooks/web/useDesign';
   import { ScrollContainer } from '/@/components/Container';
   import { Input, Popover, Pagination, Empty } from 'ant-design-vue';
-  import Icon from './Icon.vue';
   import SvgIcon from './SvgIcon.vue';
-
-  import iconsData from '../data/icons.data';
   import { propTypes } from '/@/utils/propTypes';
   import { usePagination } from '/@/hooks/web/usePagination';
   import { useDebounceFn } from '@vueuse/core';
@@ -98,18 +81,6 @@
   const APagination = Pagination;
   const AEmpty = Empty;
 
-  function getIcons() {
-    const data = iconsData as any;
-    const prefix: string = data?.prefix ?? '';
-    let result: string[] = [];
-    if (prefix) {
-      result = (data?.icons ?? []).map((item) => `${prefix}:${item}`);
-    } else if (Array.isArray(iconsData)) {
-      result = iconsData as string[];
-    }
-    return result;
-  }
-
   function getSvgIcons() {
     return svgIcons.map((icon) => icon.replace('icon-', ''));
   }
@@ -119,13 +90,13 @@
     width: propTypes.string.def('100%'),
     pageSize: propTypes.number.def(140),
     copy: propTypes.bool.def(false),
-    mode: propTypes.oneOf<('svg' | 'iconify')[]>(['svg', 'iconify']).def('iconify'),
+    mode: propTypes.oneOf<'svg'[]>(['svg']).def('svg'),
   });
 
   const emit = defineEmits(['change', 'update:value']);
 
   const isSvgMode = props.mode === 'svg';
-  const icons = isSvgMode ? getSvgIcons() : getIcons();
+  const icons = getSvgIcons();
 
   const currentSelect = ref('');
   const visible = ref(false);

@@ -8,20 +8,6 @@ export default {
     normalText: '获取验证码',
     sendText: '{0}秒后重新获取',
   },
-  cropper: {
-    selectImage: '选择图片',
-    uploadSuccess: '上传成功',
-    modalTitle: '头像上传',
-    okText: '确认并上传',
-    btn_reset: '重置',
-    btn_rotate_left: '逆时针旋转',
-    btn_rotate_right: '顺时针旋转',
-    btn_scale_x: '水平翻转',
-    btn_scale_y: '垂直翻转',
-    btn_zoom_in: '放大',
-    btn_zoom_out: '缩小',
-    preview: '预览',
-  },
   drawer: {
     loadingText: '加载中...',
     cancelText: '关闭',
@@ -121,14 +107,5 @@ export default {
     uploading: '上传中',
     uploadWait: '请等待文件上传结束后操作',
     reUploadFailed: '重新上传失败文件',
-  },
-  verify: {
-    error: '验证失败！',
-    time: '验证校验成功,耗时{time}秒！',
-
-    redoTip: '点击图片可刷新',
-
-    dragText: '请按住滑块拖动',
-    successText: '验证通过',
   },
 };

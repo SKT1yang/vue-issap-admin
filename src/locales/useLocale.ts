@@ -3,7 +3,7 @@
  */
 import type { LocaleType } from '/#/config';
 
-import moment from 'moment';
+import dayjs from 'dayjs';
 
 import { i18n } from './setupI18n';
 import { useLocaleStoreWithOut } from '/@/store/modules/locale';
@@ -12,8 +12,8 @@ import { loadLocalePool, setHtmlPageLang } from './helper';
 
 interface LangModule {
   message: Recordable;
-  momentLocale: Recordable;
-  momentLocaleName: string;
+  dayjsLocale: Recordable;
+  dayjsLocaleName: string;
 }
 
 function setI18nLanguage(locale: LocaleType) {
@@ -53,10 +53,10 @@ export function useLocale() {
     const langModule = ((await import(`./lang/${locale}.ts`)) as any).default as LangModule;
     if (!langModule) return;
 
-    const { message, momentLocale, momentLocaleName } = langModule;
+    const { message, dayjsLocale, dayjsLocaleName } = langModule;
 
     globalI18n.setLocaleMessage(locale, message);
-    moment.updateLocale(momentLocaleName, momentLocale);
+    dayjs.locale(dayjsLocaleName, dayjsLocale);
     loadLocalePool.push(locale);
 
     setI18nLanguage(locale);

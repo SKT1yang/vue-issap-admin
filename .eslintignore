@@ -13,3 +13,6 @@ dist
 .local
 /bin
 Dockerfile
+**/iconfont.ts
+**/iconfont.js
+

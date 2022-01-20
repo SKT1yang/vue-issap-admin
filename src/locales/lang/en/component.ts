@@ -8,20 +8,6 @@ export default {
     normalText: 'Get SMS code',
     sendText: 'Reacquire in {0}s',
   },
-  cropper: {
-    selectImage: 'Select Image',
-    uploadSuccess: 'Uploaded success!',
-    modalTitle: 'Avatar upload',
-    okText: 'Confirm and upload',
-    btn_reset: 'Reset',
-    btn_rotate_left: 'Counterclockwise rotation',
-    btn_rotate_right: 'Clockwise rotation',
-    btn_scale_x: 'Flip horizontal',
-    btn_scale_y: 'Flip vertical',
-    btn_zoom_in: 'Zoom in',
-    btn_zoom_out: 'Zoom out',
-    preview: 'Preivew',
-  },
   drawer: {
     loadingText: 'Loading...',
     cancelText: 'Close',
@@ -118,12 +104,5 @@ export default {
     uploading: 'Uploading',
     uploadWait: 'Please wait for the file upload to finish',
     reUploadFailed: 'Re-upload failed files',
-  },
-  verify: {
-    error: 'verification failed！',
-    time: 'The verification is successful and it takes {time} seconds！',
-    redoTip: 'Click the picture to refresh',
-    dragText: 'Hold down the slider and drag',
-    successText: 'Verified',
   },
 };

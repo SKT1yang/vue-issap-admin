@@ -10,10 +10,13 @@ declare module 'ant-design-vue/es/locale/*' {
   export default locale as Locale & ReadonlyRecordable;
 }
 
-declare module 'moment/dist/locale/*' {
-  import { LocaleSpecification } from 'moment';
-  const locale: LocaleSpecification & ReadonlyRecordable;
-  export default locale;
+declare module 'dayjs/locale/*' {
+  import { ILocale } from 'dayjs/locale/types';
+  namespace locale {
+    type Locale = ILocale;
+  }
+  const locale: locale.Locale;
+  export = locale;
 }
 
 declare module 'virtual:*' {
