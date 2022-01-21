@@ -33,6 +33,7 @@ export function useFormValues({
       if (isObject(value)) {
         value = transformDateFunc?.(value);
       }
+      debugger;
       if (isArray(value) && _isADayjsObject(value[0]) && _isADayjsObject(value[1])) {
         value = value.map((item) => transformDateFunc?.(item));
       }

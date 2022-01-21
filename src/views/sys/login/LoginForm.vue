@@ -119,7 +119,7 @@
   const rememberMe = ref(false);
 
   const formData = reactive({
-    account: 'Issap',
+    account: 'issap',
     password: '123456',
   });
 
@@ -147,6 +147,7 @@
         });
       }
     } catch (error) {
+      debugger;
       createErrorModal({
         title: t('sys.api.errorTip'),
         content: (error as unknown as Error).message || t('sys.api.networkExceptionMsg'),

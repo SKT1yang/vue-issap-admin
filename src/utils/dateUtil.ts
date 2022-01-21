@@ -1,7 +1,7 @@
 /**
  * Independent time operation tool to facilitate subsequent switch to dayjs
  */
-import dayjs, { Dayjs } from 'dayjs';
+import dayjs, { isDayjs } from 'dayjs';
 
 const DATE_TIME_FORMAT = 'YYYY-MM-DD HH:mm:ss';
 const DATE_FORMAT = 'YYYY-MM-DD ';
@@ -18,7 +18,7 @@ export function formatToDate(date: dayjs.ConfigType = undefined, format = DATE_F
 }
 
 export function _isADayjsObject(data) {
-  return data instanceof Dayjs;
+  return isDayjs(data);
 }
 
 export const dateUtil = dayjs;

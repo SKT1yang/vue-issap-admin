@@ -55,6 +55,7 @@ export default [
         (item) => item.username === username && password === item.password,
       );
       if (!checkUser) {
+        debugger;
         return resultError('Incorrect account or password！');
       }
       const { userId, username: _username, token, realName, desc, roles } = checkUser;
